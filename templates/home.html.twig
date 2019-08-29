@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Home!<br>
+    {% if is_granted('ROLE_USER') %}
+        Labs URI: {{ app.user.getLabsUri() }}<br>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/some-doc">Some doc</a><br>
+        <a href="/login">Login</a>
+    {% endif %}
+{% endblock %}
